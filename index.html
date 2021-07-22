@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Real Estate Search</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCigZ1agr2m35qnVaVcOcDNqV04By8391k&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+  </head>
+  <body>
+    <div>
+      <nav id="nav">
+        <a href="index.html"><h1>Home</h1></a>
+			  <p id="searchP">Saved Search</p>
+		  </nav>  
+    </div>
+    <br><br><br>
+    <div>
+      <p>Use the search bar below to enter a state of interest to search for properties available or statistics on available properties.<br>You may enter the full spelling of the state or just the two letter abbreviation and then the search bar will autofill.</p>
+    </div>
+    <br><br>
+    <form class="searchForm">
+      <label for="stateSearch">Enter a State to search for: </label>
+      <input class="stateSearch" id="stateSearch" />
+      <p id="validationMsg"></p>
+      <input type="radio" name="searchType" id="propertySearch" checked>
+      <label for="propertySearch">Properties</label><br>
+      <input type="radio" name="searchType" id="statSearch">
+      <label for="statSearch">Statistics</label><br>
+      <input type="submit" value="Search"/>
+    </form>
+    <div id="mapDiv" style="display:none;">
+      <h1>Map</h1>
+      <div id="map1"></div>
+      <div id="table1"></div>
+    </div>
+    <div id="statsDiv" style="display:none;">
+      <h1>Stats</h1>
+      <div id="stats"></div>
+    </div>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
