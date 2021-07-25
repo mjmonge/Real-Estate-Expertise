@@ -1,0 +1,301 @@
+<!-- Document Type as HTML-->
+<!DOCTYPE html>
+<!-- HTML Container specifying English as the Language -->
+<html lang="en">
+  <head>
+  <!-- Meta Tag Declaring Character Set -->
+	<meta charset="utf-8">
+  <!-- Meta Tag Declaring Viewport as Device-Width and Initial Scale to 1 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- In-House Local Javascript File to render Google Map -->
+  <script src="portfolio.js"></script>
+  <!-- Google Maps API Script -->
+  <!-- 
+    Note this includes my personal key that is restricted, you must obtain your own in order to run this code on your own
+  -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCigZ1agr2m35qnVaVcOcDNqV04By8391k"></script>
+  <!--  Normalize CSS sheet to improve cross web 
+        platform CSS styling -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <!-- Google Recaptcha API Script -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SVWP5ES8F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-7SVWP5ES8F');
+    </script> 
+  <!-- HTML HEADER Script to load Recaptcha-->
+  <script>
+    var onloadCallback = function() {
+      console.log("recaptcha is ready!");
+    };
+  </script>
+  <!-- Recaptcha API Call -->
+  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    async defer>
+  </script>
+	<title>Matt's Portfolio</title>
+  <!-- In-House Local CSS styling sheet -->
+	<link href="portfolio.css" rel="stylesheet" type="text/css" />
+  <!-- Google Font Styling Link -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <!-- Favicon Link -->
+  <link rel="shortcut icon" type="image/png" href="https://i.ibb.co/9VZvn4x/Matthews-Headshot-Icon.png"/>
+  </head>
+
+  <!-- VERY IMPORTANT, on page load, initialize Google Maps -->
+  <body onload="initMap()">
+    <!-- Website Container -->
+    <main>
+      <!-- Nav Container -->
+      <div>
+        <!-- Responsive Site Nav -->
+        <nav>
+          <a href="index.html"><h1>Home</h1></a>
+          <a href="portfolio.html"><h2>About</h2></a>
+          <a href="portfolio.html#contact"><h2>Contact</h2></a>
+			    <a href="index.html"><h2>Saved Search</h2></a>
+			    <a href="#profile"><p>Profile</p></a>
+			    <a href="#about-me"><p>About Me</p></a>
+			    <a href="#contact"><p>Contact Us<p></a>
+          <a href="quiz.html"><p>Quiz</p></a>
+		    </nav>  
+      </div>
+      <!-- Article Container -->
+      <article>
+        <!-- Headshot and Profile Intro Header -->
+        <header>
+          <div>
+            <a href = "http://ncphsopencode.weebly.com/" target = "_blank">
+              <img src = "https://i.ibb.co/7r0knvL/Matthews-Headshot-Sized.jpg" alt = "Matthew's Headshot">
+            </a>
+            <p>Hi, this is Matt from Thinkful.</p>
+            <a href = "https://www.linkedin.com/in/matthew-j-monge/" target = "_blank"><h1><strong>Matt Monge</strong></h1></a>
+            <img src="https://i.ibb.co/7pMQwP8/download.png" alt="Evans Scholar">
+            <p>Evans Scholar</p>
+          </div>
+        </header>
+
+        <!-- Horizontal Rule Seperator -->
+        <hr class = "hr" data-content = "MU '22, Evans Scholar '22, Illinois State Scholar, AP Scholar, Bilinqual">
+
+        <section id="intro">
+          <!-- Intro Section with Location -->
+          <h2>Intro:</h2>
+          <div>
+            <p>I'm a computer engineer who's extremely passionate about technology and  working with technology. I love to program, write code, design circuits, prototype, and design websites. I am an Evans Scholar attending Marquette University. Aside from technology, I also have a career in real estate, and I am in the process of acquiring my real estate brokerage license in Illinois. I enjoy working with people and helping them however I can with tutoring, coding/technology assistance, or assisting them with their real estate needs. I have been a real estate marketer for 3 years now and I have been a programmer since the 8th grade. I graduate with my Bachelor of Engineering in Spring 2022 for Computer Engineering and I am looking forward to my career as a Full Stack Developer and Real Estate Broker.</p>
+          </div>
+          <p>I am located in the Chicago metropolitan area to assist those with real estate questions or needs.</p>
+          <div class="mapClass" style="display:flex;">
+            <ul style="display:flex;">
+              <li style="display:flex; list-style: none;">
+                <div id="map1" style="padding:75px; margin:25px;"></div>
+              </li>
+              </br>
+              <li style="display:flex; list-style: none;">
+                <div id="map2" style="padding:75px; margin:25px;"></div>
+              </li>
+            </ul>
+          </div>
+          <p>I am located in Milwaukee for my educational pursuits.</p>
+        </section>
+
+        <hr class = "hr" data-content = "MU '22, Evans Scholar '22, Illinois State Scholar, AP Scholar, Bilinqual">
+
+        <!-- Profile Section -->
+        <section id="profile">
+          <h2>Profile:</h2>
+          <h3>Computer Engineer</h3>
+          <p>Graphic Design, IT Support, Full Stack Developer, Adept Programmer</p>
+          <h3>Real Estate Assistant Pending License</h3>
+          <p>Marketing Specialist, Social Media Manager, Pending Brokerage License</p>
+        </section>
+
+        <!-- Horizontal Rule Seperator -->
+        <hr class = "hr" data-content = "MU '22, Evans Scholar '22, Illinois State Scholar, AP Scholar, Bilinqual">
+
+        <!-- About Me Section -->
+        <section id="about-me">
+          <h2>About Me:</h2>
+          <div>
+            <p>I have always been intrigued by technology. Working with technology is something that comes naturally to me and that I enjoy very much. The design process from start to finish is something I am passionate for and I enjoy executing in every step. Of course, this include working with others to achieve a common goal. I love to collaborate with others on a team with other programmers to learn new concepts, refine my skills, or to help others learn. Programming is one of my strengths, but so is working with people. I would say my strength in working with others come from me being a Pentecostal Christian with strong faiths. I enjoy helping others learn, and if I'm not the one teaching I'm definitely learning and improving my skills in the meantime. Asides from web development/computer engineering, some of my other interests include astronomy and physics. I am passionate about science in general and I often tutor my friends in my spare time - which not only helps others but helps solidify my fundamental understandings.</p>
+            <p>Lists of Services I Wish to Provide:</p>
+            <ol style="align-items: center;">
+              <li><p>Full Stack Development</p></li>
+              <li><p>Computer Aided Design (CAD)</p></li>
+              <li><p>Web Development</p></li>
+              <li><p>Programming</p></li>
+              <li><p>IT Management</p></li>
+              <li><p>Real Estate Services</p></li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- Horizontal Rule Seperator -->
+        <hr class = "hr" data-content = "MU '22, Evans Scholar '22, Illinois State Scholar, AP Scholar, Bilinqual">
+
+        <!-- Academic Institutions Section -->
+        <section>
+          <h2>Academic Institutions:</h2>
+          <div>
+            <ul style="display: flex; flex-flow: column wrap; padding: 0px;">
+              <li>
+                <a href="https://bulletin.marquette.edu/undergrad/collegeofengineering/"  target = "_blank"><img src="https://i.ibb.co/RvFBF8f/ml-engineering-bg.png" alt="ml-engineering-bg" height="100"></a>
+              </li>
+              <li>
+                <p>Marquette University, Milwaukee, WI</p>
+                <a href="https://bulletin.marquette.edu/undergrad/collegeofengineering/departmentofelectricalandcomputerengineering/#major__computer_engineeringtext"  target = "_blank"><p><strong>Bachelor of Engineering</strong> in <strong>Computer Engineering</strong></p></a>
+                <a href="https://wgacaddieacademy.org/the-evans-scholarship" target="_blank"><p>Evans Scholar, Evans Scholar Foundation</p></a>
+                <p>Spring 2022 Graduation</p>
+                <p>Focus on Intelligent Systems</p>
+                <p>Dean's List Fall 2017, Spring 2018, and Fall 2018</p>
+                <p>Freshman Engineering Competition, 3rd Place Both Semesters</p>
+              </li>
+            </ul>
+            <ul style="display: flex; flex-flow: column wrap; padding: 0px;">
+              <li>
+                <a href="https://www.instituteonline.com/" target="_blank"><img src="https://i.ibb.co/mb207XT/real-estate-institute.png" alt="real-estate-institute" height="100"></a>
+                </li>
+              <li>
+                <p>Real Estate Institute, Niles, IL</p>
+                <a href="https://www.instituteonline.com/real-estate/illinois-pre-license" target="_blank"><p>Pre-Brokerage Pre-Licensing Track</p></a>
+                <p>Broker Personal Assistant & Marketing Specialist Pending License</p>
+              </li>
+            </ul>
+            <ul style="display: flex; flex-flow: column wrap; padding: 0px;">
+              <li>
+                <a href="https://www.thinkful.com/" target="_blank"><img src="https://i.ibb.co/GCRmCTp/thinkful-logo.png" alt="thinkful-logo" height="100"></a>
+              </li>
+              <li>
+                <p>Thinkful, Professional Development Program</p>
+                <p>Software Engineering Flex Program</p>
+              </li>
+            </ul>
+            <ul style="display: flex; flex-flow: column wrap; padding: 0px;">
+              <li>
+                <a  href="https://www.usnews.com/education/best-high-schools/illinois/districts/chicago-public-schools/northside-college-preparatory-high-school-6601" target="blank"><img src="https://i.ibb.co/zPLNdk5/Northside.jpg" alt="Northside Prep Logo" height="100"></a>
+              </li>
+              <li>
+                <p>Northside College Preparatory High School Graduate, Chicago, IL</p>
+                <p>Cross Country Runner</p>
+                <a href="https://il.milesplit.com/meets/154637-chicago-public-league-championship-2013/results/271925/raw#.X5041YjARPZ"><p>2013 <strong>CPS City Championship</strong> Race 28th Place Citywide in Freshman Race, 12'31.8" 2-mile time</p></a>
+                <p>Basketball Player & Freshman Team Co-Captain</p>
+                <p>Chess Team</p>
+                <a href="https://www.youtube.com/watch?v=Su1_e2Tbkis"><p><strong>FIRST</strong> Robotics Team Member - Lead Programmer/Robot Operator - Axiom 4787</p></a>
+                <p>Beginning Band Member - Trumpet/Baritone Player</p>
+                <p>Open Code Computer Science Extracurricular Club President and Student Coordinator</p>
+              </li>
+            </ul>
+            <ul style="display: flex; flex-flow: column wrap; padding: 0px;">
+              <li>
+                <a href="https://lanetech.org/ltac/" target="_blank"><img src="https://i.ibb.co/Qj8QCmh/ltac.png" alt="Lane Tech Academic Center (LTAC) Logo" height="100"></a>
+              </li>
+              <li>
+                <p>Lane Tech High School Academic Center Graduate, Chicago, IL</p>
+                <p>Cross Country, Basketball, and Volleyball Team Member<p>
+                <p>LTAC Science Fair, 6th Place Overall</p>
+              </li>
+            </ul>
+            <ul style="display: flex; flex-flow: column wrap; padding: 0px;">
+              <li>
+                <a href="https://www.cps.edu/about/departments/magnet-gifted-and-ib-programs" target="_blank"><img src="https://i.ibb.co/LRZpYhB/BEAUBIEN-ELEM.jpg" alt="Beaubien Elementary Logo" height="100"></a>
+              </li>
+              <li>
+                <a href="https://www.beaubienelementary.org/about-us/options-program/"><p>Beaubien Elementary, Chicago, IL</p></a>
+                <p>Options Program Attendee</p>
+                <a href="http://cjml.org/stats_1112.php" target="_blank"><p><strong>CJML</strong> Participant</p></a>
+                <p>2011-12 7th Grade CJML Participant Cumalative Year-Round 11th Place</p>
+                <p>High Pass on CPS Algebra Exit Exam in 7th Grade</p>
+                <p>Advanced Band Member - Clarinet Player - Outstanding Achievement awarded to Band</p>
+                <p>Intermediate Band Member - Clarinet Player
+                    Excellent Achievement awarded to Band</p>
+                <p>Basketball Extracurricular Player</p>
+                <p>Latin Student for 5 years</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Horizontal Rule Seperator -->
+        <hr class = "hr" data-content = "MU '22, Evans Scholar '22, Illinois State Scholar, AP Scholar, Bilinqual">
+
+        <!-- Contact Section -->
+        <section id="contact">
+          <h2>Contact:</h2>
+          <div>
+            <a href = "https://www.linkedin.com/in/matthew-j-monge/" target="_blank"><p>LinkedIn</p></a>
+          </div>
+          <div>
+            <a href = "https://github.com/mjmonge" target="_blank"><p>GitHub</p></a>
+          </div>
+          <div>
+            <a href = "mailto:matthew.monge@marquette.edu" target="_blank"><p>Email: matthew.monge@marquette.edu</p></a>
+          </div>
+          <section>
+            <h2>Contact Form</h2>
+            <div class="group">
+              <div class="item-double">
+                <form action="https://formspree.io/f/xbjpypyr" method="POST">
+                  <label for="user-name">Name:</label>
+                  <input id="user-name" type="text" name="name">
+                  <label for="user-email">Email:</label>
+                  <input id="user-email" type="text" name="email">
+                  <label for="phonenum">Phone #:</label>
+                  <input id="phonenum" type="text" name="phone"
+                      pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="xxx-xxx-xxxx"/>
+                  <!--
+                    Google Recaptcha Div With
+                    Restricted Public Site key
+                    NOTE: Must create own
+                  -->
+                  <div class="g-recaptcha"
+                      data-sitekey="6Lf3Lt8ZAAAAAOCxAgT6xjpo0DZWvypEYFFDr2J-"></div>
+                  <input type="submit" value="Submit">
+                </form>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- Horizontal Rule Seperator -->
+        <hr class = "hr" data-content = "MU '22, Evans Scholar '22, Illinois State Scholar, AP Scholar, Bilinqual">
+
+        <!-- Footer Project Sections -->
+        <footer>
+          <section>
+            <h2>Projects:</h2>
+            <h3>Portfolio Website</h3>
+            <a href="https://github.com/mjmonge/Portfolio-Site" target="_blank"><p>Portfolio GitHub Project</p></a>
+            <p>Portfolio Website - HMTL/CSS/JS - Project about myself and my accomplishments, created from scratch, the target audience are those wanting to know more about me</p>
+            <p>I practiced making a mobile friendly website with responsive navigation and HTML elements, and I practiced setting up the Google Maps and Analytics functions on a web page</p>
+            <a href="https://mjmonge.github.io/Portfolio-Site/" target="_blank"><p>GitHub Page Link</p></a>
+            <br><br>
+            <h3>Real Estate Quiz</h3>
+            <a href="https://github.com/mjmonge/Real-Estate-Quiz" target="_blank"><p>Quiz GitHub Project</p></a>
+            <p>Short 5 Question Multiple Choice Quiz about Real Estate that is replayable and keeps track of the score.</p>
+            <p>I practiced maintaining state in a site using jQuery and utilizing event delegation to do so.</p>
+            <a href="https://mjmonge.github.io/Real-Estate-Quiz/" target="_blank"><p>GitHub Page Link</p></a>
+            <br><br>
+            <h3>National Park Search</h3>
+            <a href="https://github.com/mjmonge/National-Park-Search" target="_blank"><p>Park Search GitHub Project</p></a>
+            <p>Website that searches the National Park Database based off of a state to find national parks.</p>
+            <p>I practiced making asynchronous calls to fetch data from a url, parse the results, and display them in a search.</p>
+            <a href="https://mjmonge.github.io/National-Park-Search/" target="_blank"><p>GitHub Page Link</p></a>
+            <br><br>
+            <h3>API Hack Capstone: Real Estate Search</h3>
+            <a href="https://github.com/mjmonge/Real-Estate-Search" target="_blank"><p>Real Estate Search GitHub Project</p></a>
+            <p>Site that queries the Bridge API to fetch properties and statistics on these properties based on a search by state. Site also displays the properties on a Google Map.</p>
+            <p>I practiced interacting with different APIs and utilizing asychronous jQuery to put it all together and utilizing event delegation to present the information in a useful way.</p>
+            <a href="https://mjmonge.github.io/Real-Estate-Search/" target="_blank"><p>GitHub Page Link</p></a>
+          </section>
+        </footer>
+      </article>
+    </main>
+  </body>
+
+</html>

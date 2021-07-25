@@ -1,0 +1,636 @@
+/*  
+    body styling properties 
+    aligning text to center, background color/image
+    and opacity for transparency and no margin
+*/
+body {
+  display: flex;
+  text-align: center;
+  background-color: rgb(255,215,0);
+  background-image: url("https://i.ibb.co/XVknPwF/codecode.jpg");
+  opacity: 0.98;
+  padding: 2px;
+  margin: 2px;
+}
+
+div > p, section > p {
+  font-weight: inherit;
+}
+
+strong {
+  font-weight: bolder;
+}
+
+/*
+  nav styling
+*/
+body > main > div > nav {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #0B1C51;
+  padding: 0px;
+  margin: 2px;
+}
+
+/*
+  font styling for text tags
+*/
+h1, h2, h3, p {
+  font-family: Montserrat;
+}
+
+/*
+  font sizing for text tags
+*/
+p {
+  font-size: 14px;
+}
+
+/*
+  nav styling
+*/
+body > main > div > nav > a > h1 {
+  font-size: 14px;
+  padding: 5px;
+  color: #fff;
+}
+
+/*
+  nav styling
+*/
+body > main > div > nav > p {
+  font-family: Montserrat;
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+  nav styling
+*/
+body > main > div > nav > a:link {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+  nav styling
+*/
+body > main > div > nav > a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+  nav styling
+*/
+body > main > div > nav >  a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/*
+  nav styling
+*/
+body > main > div > nav >  a:active {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* 
+    padding to the main elements 
+*/
+main {
+  padding: 2px;
+  margin: 2px;
+}
+
+/* 
+    padding to the main elements 
+*/
+section > div, header > div {
+  padding: px;
+}
+
+
+/*  
+    padding, border, and background/background clip
+    to style the article tag nested in the main tags 
+*/
+main > article {
+  text-align: center;
+  border: 4px dotted crimson;
+  background: lightblue;
+  background-clip: padding-box;
+  padding: 4px;
+}
+
+
+/*  
+    section tags nested in an article tag nested in the main tag
+    are organized by flexbox with column wrap and
+    aligned/justified to the center
+*/
+main > article > section, main > article > header {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+/*  
+    ordered lists are organized by flexbox with row wrap and
+    aligned/justified to the center and specifying initial list
+    style position
+*/
+ol {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: stretch;
+  justify-content: center;
+  list-style-position: initial;
+  padding: 10px;
+  margin: 5px;
+  width: 100%
+}
+
+
+ul > li {
+  padding: 10px;
+  margin: 5px;
+  list-style: none;
+}
+
+/*
+    list items in unordered lists are vertically aligned to the
+    center, have no list-style punctuation, aligned center for text
+    and have padding/margin
+*/
+main > article > section > div > div > ul > li {
+  vertical-align: middle;
+
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+}
+
+/*
+  header and section tags nested in an article tag have padding, an
+  orange background color, and text is aligned to the center
+*/
+article > header, article > section, article > footer {
+  padding: 10px;
+  background-color: rgb(248, 160, 29);
+  text-align: center;
+}
+
+/*
+  CSS to style horizontal rules to display text in a colorful fashion
+*/
+.hr {
+  height: auto;
+  box-sizing: border-box;
+  line-height: 1.5em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  opacity: .98;
+  padding: 15px;
+  background: linear-gradient(0.46turn, #3f87a6, #2fce0f, #f69d3c);
+}
+
+/*
+  CSS to style horizontal rules to display text in a colorful fashion
+*/
+.hr:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+/*
+  CSS to style horizontal rules to display text in a colorful fashion
+*/
+.hr:after {
+  content: attr(data-content);
+  position: relative;
+  display: inline-block;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: italic;
+  color: #ffffff;
+}
+
+/*  
+    link styling to style links in 
+    every state for text and images
+*/
+a:link {
+  text-decoration: none;
+  color: blue;
+}
+
+/*  
+    link styling to style links in 
+    every state for text and images
+*/
+a:visited {
+  text-decoration: none;
+  color: blue;
+}
+
+/*  
+    link styling to style links in 
+    every state for text and images
+*/
+a:hover {
+  text-decoration: underline;
+  color: cornflowerblue;
+}
+
+/*  
+    link styling to style links in 
+    every state for text and images
+*/
+a:hover img {
+  border: 5px dotted cornflowerblue;
+}
+
+/*  
+    link styling to style links in 
+    every state for text and images
+*/
+a:active {
+  text-decoration: underline;
+  color: lightskyblue;
+}
+
+/*  
+    link styling to style links in 
+    every state for text and images
+*/
+a:active img {
+  border: 5px dotted lightskyblue;
+}
+
+/*
+  font sizing for text tags
+*/
+h1 {
+  font-size: 48px;
+}
+
+/*
+  sizing and padding/margin for images in list items
+*/
+li + img {
+  width: 65%;
+  height: 50%;
+  padding: 2px;
+  margin: 2px;
+}
+
+/*
+  padding/margin for paragraphs in list items
+*/
+li + p {
+  padding: 2px;
+  margin: 2px;
+}
+
+/*
+  Default sizing for Google Maps Divs
+  // IMPORTANT
+  //  Required to specific div in pixels for
+      Google Maps Javascript API
+      to work in this manner with this approach
+*/
+#map1,#map2 {
+    /* The height/width is 400 pixels by default */
+    height: 400px;
+    width: 400px;
+}
+
+
+section.mapClass > div {
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Groups & Items  (Mobile First) */
+
+.group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.item {
+  flex: 1;
+  margin: 10px;
+}
+
+.item-double {
+  flex: 2;
+  margin: 10px;
+}
+
+/* ---  Contact Form Design --- */
+
+form {
+  padding-right: 6px;
+  /* Fixed small sizing issue on the right */
+}
+
+form input {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form div {
+  margin: 0 auto;
+  padding-bottom:15px;
+}
+
+/*
+    Media Queries to resize the Google Maps according to device width
+*/
+@media only screen and (min-width: 200px){
+  /* Set the size of the div element that contains the map */
+  #map1,#map2 {
+    height: 90px;
+    /* The height is 75 pixels */
+    width: 90px;
+    /* The width is 75 pixels */
+  }
+}
+
+
+/*
+    Media Queries to resize the Google Maps according to device width
+*/
+@media only screen and (min-width: 250px){
+/* Set the size of the div element that contains the map */
+  #map1,#map2 {
+    height: 115px;
+    /* The height is 100 pixels */
+    width: 115x;
+    /* The width is 100 pixels */
+  }
+}
+
+/*
+    Media Queries to resize the Google Maps according to device width
+*/
+@media only screen and (min-width: 300px){
+/* Set the size of the div element that contains the map */
+  #map1,#map2 {
+    height: 140px;
+    /* The height is 125 pixels */
+    width: 140px;
+    /* The width is 125 pixels */
+  }
+}
+
+/*
+    Media Queries to resize the Google Maps according to device width
+*/
+@media only screen and (min-width: 350px){
+/* Set the size of the div element that contains the map */
+  #map1,#map2 {
+    height: 165px;
+    /* The height is 150 pixels */
+    width: 165px;
+    /* The width is 150 pixels */
+  }
+}
+
+/*
+    Media Queries to resize the Google Maps according to device width
+*/
+@media only screen and (min-width: 400px){
+/* Set the size of the div element that contains the map */
+  #map1,#map2 {
+    height: 190px;
+    /* The height is 175 pixels */
+    width: 190px;
+    /* The width is 175 pixels */
+  }
+}
+
+/*
+    Media Queries to resize the Google Maps according to device width
+*/
+@media only screen and (min-width: 450px){
+/* Set the size of the div element that contains the map */
+  #map1,#map2 {
+    height: 215px;
+    /* The height is 400 pixels */
+    width: 215px;
+    /* The width is the width of the web page */
+  }
+}
+
+/*
+    Media Queries to resize the Google Maps according to device width
+*/
+@media only screen and (min-width: 550px){
+/* Set the size of the div element that contains the map */
+  #map1,#map2 {
+    height: 265px;
+    /* The height is 400 pixels */
+    width: 265px;
+    /* The width is the width of the web page */
+  }
+}
+
+/*
+    Media Queries to resize the Google Maps according to device width
+*/
+@media only screen and (min-width: 700px){
+/* Set the size of the div element that contains the map */
+  #map1,#map2 {
+    height: 290x;
+    /* The height is 400 pixels */
+    width: 290px;
+    /* The width is the width of the web page */
+  }
+}
+
+/*
+    Media Queries to resize the Google Maps according to device width
+*/
+@media only screen and (min-width: 900px){
+/* Set the size of the div element that contains the map */
+  #map1,#map2 {
+    height: 315px;
+    /* The height is 400 pixels */
+    width: 315px;
+    /* The width is the width of the web page */
+  
+}
+
+/*
+    Media Queries to resize the Google Maps according to device width
+*/
+@media only screen and (min-width: 1100px){
+/* Set the size of the div element that contains the map */
+  #map1,#map2 {
+    height: 365px;
+    /* The height is 400 pixels */
+    width: 365px;
+    /* The width is the width of the web page */
+  }
+}
+
+/*
+    Media Queries to restructure key site aspects
+    optimized for desktop
+*/
+@media all and (min-width: 600px) and (max-width: 4400px) {
+
+  main > article > section > div > div {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  main > article > section > div > div > ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  main > article > section > div {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+    main > article > section > div > div {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  main > article > section > div > div > ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    margin: 2px;
+  }
+
+  main > article > header > div  {
+    width: 100%;
+    text-align: center;
+  }
+
+  main > article > header > div > a > img  {
+    padding: 5px;
+    margin: 2px;
+  }
+
+  main > article > header > div > a > h1  {
+    font-size: 24px;
+  }
+
+  li + img {
+    padding: 2px;
+    margin: 2px;
+  }
+
+  li + p {
+    padding: 2px;
+    margin: 2px;
+  }
+}
+
+
+/*
+    Media Queries to restructure key site aspects
+    optimized for mobile
+*/
+@media all and (min-width: 200px) and (max-width: 600px) {
+    main > article > section > div > div {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  main > article > section > div > div > ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  main > article > header > div > a > img  {
+    padding: 5px;
+    margin: 2px;
+  }
+
+  li + img {
+    padding: 2px;
+    margin: 2px;
+  }
+
+  li + p {
+    padding: 2px;
+    margin: 2px;
+  }
+}
+
+/*
+    Media Queries to restructure nav for mobile
+*/
+@media all and (min-width: 200px) and (max-width: 600px) {
+  header {
+    display: flex;
+    justify-content: center;
+    padding: 0 30px;
+  }
+
+  header h1 {
+    font-size: 42px;
+    margin: 14px 0;
+    padding-top: 6px;
+  }
+  
+  header nav {
+    margin-top: 14px;
+  }
+
+  header nav ul li a:hover {
+    color: #bdbdbd;
+  }
+}
+
+/*
+    --- 
+        Media Queries to restrure the form groups
+        & items for Desktop
+    --- 
+*/
+
+@media all and (min-width: 600px) {
+  section {
+    padding: 0 10%;
+  }
+  .group {
+    flex-direction: row;
+  }
+}

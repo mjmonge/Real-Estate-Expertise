@@ -9,12 +9,26 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCigZ1agr2m35qnVaVcOcDNqV04By8391k&callback=initMap&libraries=&v=weekly"
       defer
     ></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SVWP5ES8F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-7SVWP5ES8F');
+    </script> 
+    <link rel="shortcut icon" type="image/png" href="https://i.ibb.co/X31S6mc/Real-Estate-Expertise-Logo.png"/>
   </head>
-  <body>
+  <body onload="initMap()">
     <div>
       <nav id="nav">
         <a href="index.html"><h1>Home</h1></a>
+        <a href="portfolio.html"><h2>About</h2></a>
+        <a href="quiz.html"><h3>Quiz</h3></a>
+        <a href="portfolio.html#contact"><h3>Contact</h3></a>
 			  <p id="searchP">Saved Search</p>
+        <p id="reset" style="display: none;">Reset</p></a>
 		  </nav>  
     </div>
     <br><br><br>
@@ -23,24 +37,35 @@
     </div>
     <br><br>
     <form class="searchForm">
-      <label for="stateSearch">Enter a State to search for: </label>
-      <input class="stateSearch" id="stateSearch" />
-      <p id="validationMsg"></p>
-      <input type="radio" name="searchType" id="propertySearch" checked>
-      <label for="propertySearch">Properties</label><br>
-      <input type="radio" name="searchType" id="statSearch">
-      <label for="statSearch">Statistics</label><br>
-      <input type="submit" value="Search"/>
+      <table>
+      <td>
+        <tr>
+          <label for="stateSearch">Enter a State to search for: </label>
+          <input class="stateSearch" id="stateSearch" />
+          <p id="validationMsg"></p>
+          <input type="radio" name="searchType" id="propertySearch" checked>
+          <label for="propertySearch">Properties</label><br>
+          <input type="radio" name="searchType" id="statSearch">
+          <label for="statSearch">Statistics</label><br>
+          <input type="submit" value="Search"/>
+        </tr>
+        <tr>
+          <div id="mapDiv" style="display:flex; flex-flow: column wrap;">
+          <h1>Map:</h1>
+          <div id="map1" style="padding:45px auto; margin:15px auto;"></div>
+        </tr>
+      </td>
+      <td>
+        <tr>
+          <div id="table1"></div>
+          </div>
+            <div id="statsDiv" style="display:none;">
+            <h1>Stats:</h1>
+          <div id="stats"></div>
+        </tr>
+      </td>
+      </div>
     </form>
-    <div id="mapDiv" style="display:none;">
-      <h1>Map</h1>
-      <div id="map1"></div>
-      <div id="table1"></div>
-    </div>
-    <div id="statsDiv" style="display:none;">
-      <h1>Stats</h1>
-      <div id="stats"></div>
-    </div>
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script src="script.js"></script>
   </body>

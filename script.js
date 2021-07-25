@@ -1,7 +1,7 @@
 'use strict';
 
 // array of coordinates of each state to help the map focus on the right state when searched
-var stateLocations =[[32.318230, -86.902298], [66.160507, -153.369141], [34.048927, -111.093735], [34.799999, -92.199997], [33.981711, -118.197939], [39.113014, -105.358887], [41.599998, -72.699997], [39.000000, -75.500000], [27.994402, -81.760254], [33.247875, -83.441162], [19.741755, -155.844437], [44.068203, -114.74204], [40.000000, -89.000000], [40.273502, -86.126976], [42.032974, -93.581543], [38.500000, -98.000000], [37.839333, -84.270020], [30.391830, -92.329102], [45.367584, -68.972168], [39.045753, -76.641273], [42.407211, -71.382439], [44.182205, -84.506836], [46.392410, -94.636230], [33.000000, -90.000000], [38.573936, -92.603760], [46.965260, -109.533691], [41.500000, -100.000000], [39.876019, -117.224121], [44.000000, -71.500000], [39.833851, -74.871826], [34.307144, -106.018066], [43.000000, -75.000000], [35.782169, -80.793457], [47.650589, -100.437012], [40.367474, -82.996216], [36.084621, -96.921387], [44.000000, -120.500000], [41.203323, -77.194527], [41.700001, -71.500000], [33.836082, -81.163727], [44.500000, -100.000000], [35.860119, -86.660156], [31.000000, -100.000000], [39.419220, -111.950684], [44.000000, -72.699997], [37.926868, -78.024902], [47.751076, -120.740135], [39.000000, -80.500000], [44.500000, -89.500000], [43.075970, -107.290283]];
+var statesLocations = [[32.318230, -86.902298], [66.160507, -153.369141], [34.048927, -111.093735], [34.799999, -92.199997], [33.981711, -118.197939], [39.113014, -105.358887], [41.599998, -72.699997], [39.000000, -75.500000], [27.994402, -81.760254], [33.247875, -83.441162], [19.741755, -155.844437], [44.068203, -114.74204], [40.000000, -89.000000], [40.273502, -86.126976], [42.032974, -93.581543], [38.500000, -98.000000], [37.839333, -84.270020], [30.391830, -92.329102], [45.367584, -68.972168], [39.045753, -76.641273], [42.407211, -71.382439], [44.182205, -84.506836], [46.392410, -94.636230], [33.000000, -90.000000], [38.573936, -92.603760], [46.965260, -109.533691], [41.500000, -100.000000], [39.876019, -117.224121], [44.000000, -71.500000], [39.833851, -74.871826], [34.307144, -106.018066], [43.000000, -75.000000], [35.782169, -80.793457], [47.650589, -100.437012], [40.367474, -82.996216], [36.084621, -96.921387], [44.000000, -120.500000], [41.203323, -77.194527], [41.700001, -71.500000], [33.836082, -81.163727], [44.500000, -100.000000], [35.860119, -86.660156], [31.000000, -100.000000], [39.419220, -111.950684], [44.000000, -72.699997], [37.926868, -78.024902], [47.751076, -120.740135], [39.000000, -80.500000], [44.500000, -89.500000], [43.075970, -107.290283]];
 // corresponding index to the current state
 var stateIdx=0;
 
@@ -59,6 +59,22 @@ function searchForm() {
   })
   // if the user clicked on the saved search then load the saved search and the reset button in the nav
   $('#searchP').on('click', function () {
+    var input = $('.stateSearch').val().toLowerCase();
+    var statesLong = ['alabama', 'alaska', 'arizona', 'arkansas', 'california', 'colorado', 'connecticut', 'delaware', 'florida', 'georgia', 'hawaii', 'idaho', 'illinois', 'indiana', 'iowa', 'kansas', 'kentucky', 'louisiana', 'maine', 'maryland', 'massachusetts', 'michigan', 'minnesota', 'mississippi', 'missouri', 'montana', 'nebraska', 'nevada', 'new hampshire', 'new jersey', 'new mexico', 'new york', 'north carolina', 'north dakota', 'ohio', 'oklahoma', 'oregon', 'pennsylvania', 'rhode island', 'south carolina', 'south dakota', 'tennessee', 'texas', 'utah', 'vermont', 'virginia', 'washington', 'west virginia', 'wisconsin', 'wyoming'];
+    var statesShort = ['al', 'ak', 'az', 'ar', 'ca', 'co', 'ct', 'de', 'fl', 'ga', 'hi', 'id', 'il', 'in', 'ia', 'ks', 'ky', 'la', 'me', 'md', 'ma', 'mi', 'mn', 'ms', 'mo', 'mt', 'ne', 'nv', 'nh', 'nj', 'nm', 'ny', 'nc', 'nd', 'oh', 'ok', 'or', 'pa', 'ri', 'sc', 'sd', 'tn', 'tx', 'ut', 'vt', 'va', 'wa', 'wv', 'wi', 'wy'];
+    var found = false;
+    for (var i = 0; i < statesLong.length; i++) {
+      if (input == statesLong[i]) {
+        found = true;
+        stateIdx = i;
+        break;
+      } else if (input == statesShort[i]) {
+        found = true;
+        stateIdx = i;
+        $('.stateSearch').val(statesLong[i]);
+        break;
+      }
+    }
     lookupProperties(true, "california");
     var nav = document.getElementById("nav").innerHTML;
     document.getElementById("nav").innerHTML = `${nav}<a href='index.html' style='color: blue;'><p id='reset'>Reset</p></a>`;
@@ -110,11 +126,11 @@ function lookupProperties(filter, state) {
         });
       // functionality to determine the next step after the data is acquired
       if(document.getElementById('propertySearch').checked & !filter) {
-        updateMap(parsedData, false, searchState);
+        updateMap(parsedData, false);
       } else if(document.getElementById('statSearch').checked & !filter) {
         displayStats(parsedData, false);
       } else {
-        updateMap(parsedData, true, searchState);
+        updateMap(parsedData, true);
         displayStats(parsedData, true);
       }
     })
@@ -152,12 +168,12 @@ function displayStats(parsedData, filter) {
 }
 
 // Method to populate properties in the Google Map Divs and listings in the listing table
-function updateMap(data, filter, stateNum) {
+function updateMap(data, filter) {
   // test data only exists in california so california is hardcoded in
   const californiaNum = 4;
   const map1 = new google.maps.Map(document.getElementById("map1"), {
     zoom: 8,
-    center: { lat: stateLocations[stateNum][0], lng: stateLocations[stateNum][1] }
+    center: { lat: statesLocations[californiaNum][0], lng: statesLocations[californiaNum][1] }
   });
   
   var info = new google.maps.InfoWindow();

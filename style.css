@@ -15,8 +15,8 @@ nav {
   align-items: center;
 }
 
-nav p {
-  padding-left: 10px;
+nav > p, nav > a, nav > a > h1, nav > a > h2, nav > a > h3, nav > a > p {
+  padding: 10px;
 }
 
 nav a {
